@@ -5,8 +5,7 @@ import {apiKey, url, sayHelloWorld} from './src/config';
 
 import User, {createUrl, gravatar} from './src/user';
 
-
-const user = new User('Maki Tolentino', 'maki.tolentino.03gmail.com', 'maxdev.pro');
+const user = new User('Maki Tolentino', 'maki.tolentino.03@gmail.com', 'maxdev.pro');
 
 console.log(user);
 console.log(createUrl(user.name));

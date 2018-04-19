@@ -1,7 +1,6 @@
 import slug from 'slug';
 import { url } from './config';
 import md5 from 'md5';
-import base64 from 'base-64';
 
 export default function User(name, email, website) {
 	return { name, email, website };
