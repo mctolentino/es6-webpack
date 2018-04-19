@@ -9,11 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "base-64": "^0.1.0",
     "flickity": "^2.1.1",
     "insane": "^2.6.2",
     "jquery": "^3.3.1",
     "jsonp": "^0.2.1",
     "lodash": "^4.17.5",
+    "md5": "^2.2.1",
     "slug": "^0.9.1",
     "yarn": "^1.6.0"
   },
