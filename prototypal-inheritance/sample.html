@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototypal Inheritance</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Programmer(name, language) {
+		this.name = name;
+		this.language = language;
+	}
+
+	Programmer.prototype.greet = function () {
+		var greeting = ['Hello World! this is', this.name, 'and I\'m a', this.language, 'developer'];
+		console.log(greeting.join(' '));
+	}
+
+	var maki = new Programmer('Maki', 'Javascript');
+	maki.greet();
+	
+	Programmer.prototype.debug = function () {
+		console.log('There seems to be a bug... Fixing...');
+	}
+
+	maki.debug();
+
+
+	class Dog {
+		constructor(name, breed) {
+			this.name = name;
+			this.breed = breed;
+		}
+
+		bark() {
+			console.log(`Bark Bark`);
+		}
+
+		cuddle() {
+			console.log(`I love my owner`);
+		}
+
+		static info() {
+			console.log('Test Dog Info');
+		}
+
+		get description() {
+			return `${this.name} is a ${this.breed}`;
+		}
+
+		set nicknames(value) {
+			this.nick = value.trim();
+		}
+
+		get nicknames() {
+			return this.nick
+		}
+	}
+
+	const snickers = new Dog('Snickers', 'King Charles');
+
+</script>
+</body>
+</html>
