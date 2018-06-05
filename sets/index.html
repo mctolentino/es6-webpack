@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+<body>
+  <script>
+      const people = new Set();
+      people.add('Wes');
+      people.add('Snickers');
+      people.add('Kait');
+
+      const students = new Set(['Wes', 'Kara', 'Tony']);
+
+      const dogs = ['Snickers', 'Sunny'];
+      const dogSet = new Set(dogs);
+
+      for (const dog of dogSet) {
+          console.log(dog);
+      }
+
+      const dogIt = dogSet.values();
+      console.log(dogIt.next());
+
+      console.log('Dogs has Sunny:' + dogSet.has('Sunny'));
+  </script>
+</body>
+</html>
