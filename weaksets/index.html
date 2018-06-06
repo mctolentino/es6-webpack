@@ -1,0 +1,21 @@
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        let dog1 = { name: 'Snickers', age: 3 };
+        let dog2 = { name: 'Sunny', age: 4 };
+
+        const weakSet = new WeakSet([dog1, dog2]);
+
+        console.log(weakSet);
+        dog1 = null;
+        setTimeout(3000, function () {
+            console.log(weakSet);
+        });
+        
+
+    </script>
+</body>
+</html>
