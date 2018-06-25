@@ -1,0 +1,40 @@
+<html>
+<body>
+    <script>
+        function breathe(amount) {
+           return new Promise((resolve, reject) => {
+                if (amount < 50) {
+                    reject('That is too small of a value! Must be greater than 50 ms.');
+                };
+                setTimeout(() => { resolve(`Done for ${amount} ms`)}, amount);
+            });
+        };
+
+        breathe(1000).then(res => {
+            console.log(res);
+            return breathe(500);
+        }).then(res => {
+            console.log(res);
+            return breathe(300);
+        }).then(res => {
+            console.log(res);
+            return breathe(40);
+        }).then(res => {
+            console.log(res);
+            return breathe(200);
+        }).then(res => {
+            console.log(res);
+            return breathe(100);
+        }).then(res => {
+            console.log(res);
+            return breathe(50);
+        }).then(res => {
+            console.log(res);
+            return breathe(40);
+        }).catch(err => {
+            console.log(err);
+        });
+
+    </script>
+</body>
+</html>

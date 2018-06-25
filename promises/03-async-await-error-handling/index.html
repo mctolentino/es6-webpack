@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+        function breathe(amount) {
+            return new Promise((resolve, reject) => {
+                if (amount < 50) {
+                    reject('That is too small of a value! Must be greater than 50 ms.');
+                };
+                setTimeout(() => { resolve(`Done for ${amount} ms`) }, amount);
+            });
+        };
+
+        function handleErrors(fn) {
+            return function (...args) {
+                console.log('Running function: ' + fn.name);
+                fn(...args).catch(err => {
+                    console.log('Error Encountered: ' + err);
+                });
+            }
+        }
+
+        async function go() {
+            let res = await breathe(1000);
+            console.log(res);
+            res = await breathe(400);
+            console.log(res);
+            res = await breathe(300);
+            console.log(res);
+            res = await breathe(200);
+            console.log(res);
+            res = await breathe(100);
+            console.log(res);
+            res = await breathe(50);
+            console.log(res);
+            res = await breathe(40);
+            console.log(res);
+        }
+
+        var errorWrapper = handleErrors(go);
+
+        errorWrapper();
+
+    </script>
+</body>
+</html>
