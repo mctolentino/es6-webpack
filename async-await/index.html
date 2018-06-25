@@ -1,0 +1,27 @@
+<html>
+<body>
+    <video controls class="handsome"></video>
+    <script>
+        fetch('https://api.github.com/users/mctolentino')
+            .then(values => {
+                return values.json();
+            })
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log('Error Encountered:' + err);
+            });
+
+        const video = document.querySelector('.handsome');
+
+        navigator.mediaDevices.getUserMedia({ video: true }).then(mediaStream => {
+            video.srcObject = mediaStream;
+            video.load();
+            video.play();
+        }).catch(err => {
+            console.log(err);
+        })
+    </script>
+</body>
+</html>
