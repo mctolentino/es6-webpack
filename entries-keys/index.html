@@ -1,0 +1,45 @@
+<html>
+<body>
+    <script>
+        const inventory = {
+            backpacks: 10,
+            jeans: 23,
+            hoodies: 4,
+            shoes: 11
+        }
+
+        // All items in a list
+        const nav = Object.keys(inventory).map(item => `<li>${item}</li>`).join('\n');
+        console.log(nav);
+ 
+        // Print inventory list with item numbers
+        const descriptionHeader = 'Item Description';
+        const quantityHeader = 'Item Quantity';
+
+        const descriptionLength = Object.keys(inventory).sort()[0].length
+        const padMax = descriptionHeader.length > descriptionLength ? descriptionHeader.length : descriptionLength
+
+        headerPrinter([descriptionHeader, quantityHeader], padMax);
+        Object.entries(inventory).forEach((pair) => { rowPrinter(pair, padMax) })
+
+        console.log('-------------------------------------------');
+        // Total number of inventory items
+        const totalItems = Object.values(inventory).reduce((sum, items) => sum + items);
+        console.log('Total Items: ' + totalItems);
+
+        function headerPrinter(headers, padMax) {
+            let formattedHeaders = headers.map(header => {
+                return `${header.padEnd(padMax)} | `
+            })
+            console.log(...formattedHeaders);
+        }
+
+        function rowPrinter(rowValues, padMax) {
+            let formattedValues = rowValues.map(row => {
+                return `${row.toString().padStart(padMax)} | `
+            })
+            console.log(...formattedValues);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        const strings = ['test', 'test=test', 'longestString', 'really really really long string']
+        const longestString = strings.reduce((longest, str) => {
+            return longest.length > str.length ? longest.length : str.length
+        });
+
+        strings.forEach(str => console.log(str.padStart(longestString)));
+
+        console.log(('Exponential operator: ' + 2 ** 2 ** 2 ** 2).padStart(longestString, '-'));
+    </script>
+</body>
+</html>
