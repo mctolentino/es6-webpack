@@ -22,7 +22,8 @@
             }
         }
 
-        async function go() {
+        async function go(value) {
+            console.log(value);
             let res = await breathe(1000);
             console.log(res);
             res = await breathe(400);
@@ -41,7 +42,7 @@
 
         var errorWrapper = handleErrors(go);
 
-        errorWrapper();
+        errorWrapper('test');
 
     </script>
 </body>
